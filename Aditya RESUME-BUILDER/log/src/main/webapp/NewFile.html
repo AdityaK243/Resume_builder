@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome</title>
+<script>
+    function showresume(){
+        var main=document.querySelector(".main");
+        if(main.style.display="none"){
+            main.style.display="block";
+        }
+        else{
+            main.style.display="none";
+        }
+    }
+    function showforms(n){
+    var content=document.getElementsByClassName("content");
+    if(n==0){
+        content[0].style.display="block";
+        content[1].style.display="none";
+        content[2].style.display="none";
+        content[3].style.display="none";
+        content[4].style.display="none";
+    }
+    else if(n==1){
+        content[0].style.display="none";
+        content[1].style.display="block";
+        content[2].style.display="none";
+        content[3].style.display="none";
+        content[4].style.display="none";
+    }
+    else if(n==2){
+        content[0].style.display="none";
+        content[1].style.display="none";
+        content[2].style.display="block";
+        content[3].style.display="none";
+        content[4].style.display="none";
+    }
+    else if(n==3){
+        content[0].style.display="none";
+        content[1].style.display="none";
+        content[2].style.display="none";
+        content[3].style.display="block";
+        content[4].style.display="none";
+    }
+    else if(n==4){
+        content[0].style.display="none";
+        content[1].style.display="none";
+        content[2].style.display="none";
+        content[3].style.display="none";
+        content[4].style.display="block";
+    }
+
+    }
+    function showDept(){
+        var degree=document.querySelector('.degree').value;
+        var Dept=document.getElementsByClassName('Dept');
+        if(degree==='B.Tech'){
+            Dept[0].style.display="block";
+            Dept[1].style.display="none";
+            Dept[2].style.display="none";
+    }
+    else if(degree==='B.Arts'){
+        Dept[0].style.display="none";
+        Dept[1].style.display="block";
+        Dept[2].style.display="none";
+    }
+    else if(degree==='B.Sc'){
+        Dept[0].style.display="none";
+        Dept[1].style.display="none";
+        Dept[2].style.display="block";
+    }
+    }
+</script>
+<style>
+    .navbar {
+        
+        border-style:dotted;
+        overflow: hidden;
+  background-color: rgb(117, 84, 207);
+}
+.navbar a{
+    color:rgb(88, 88, 36);
+    font-size:30px;
+    text-decoration: none;
+}
+button{
+    border-radius: 50px;
+    padding:11px;
+}
+
+.v{
+    border-left: 8px solid rgb(59, 30, 30);
+ 
+    height: 550px;
+    position:absolute;
+    left:15%;
+    margin-left:33px;
+}
+.pd {
+   color:white;
+   padding:10px;
+   font-size: 18px;
+}
+.main{ 
+    
+    background-color: rgb(142, 163, 131);
+    border-style: solid;
+    width: 100%;
+    height: 800px;
+}
+.main .left{ 
+
+    padding-left: 0px;
+    float:left;
+    border-style: none;
+}
+.main .right{
+    float: right;
+    width: 67%;
+    padding-right: 20px;
+    padding-left: 200px;
+
+    
+    border-style: none;
+}
+#name{
+        width:calc(200px);
+         height:calc(30px);
+         margin-right: 20px;
+
+    }
+    #email{
+        width:calc(200px);
+         height:calc(30px);
+         margin-right: 20px;
+         margin-top: 40px;
+    }
+    #wl{
+        width:calc(200px);
+         height:calc(30px);
+         margin-right: 20px;
+        margin-top: 40px;
+    }
+ .content{
+     margin-right: 200px;
+        float: right;
+        padding-left: 150px;
+        /* background-color: rgb(142, 163, 131); */
+    }
+   
+
+    
+   button{
+    border-radius: 50px;
+    padding:12px;
+    color:rgb(187, 187, 230);
+    background-color: rgb(145, 118, 118);
+   margin-top: 19px;
+   }
+   .b{
+       padding-left: 220px;
+       padding-top: 5%;
+   }
+   .first{
+       padding-right: 50px;
+   }
+   #rb:hover{
+       color: rgb(216, 44, 44);
+   }
+   #rb{
+    background:none;border: none; color:rgb(88, 88, 36);
+        font-size:30px;
+   }
+   .right .content .first input:valid{
+       border-color: rgb(59, 243, 59);
+   }
+   .right .content .first input:focus{
+       outline: none;
+   }
+   .right .content .first input:invalid{
+       border-color: rgb(250, 6, 6);
+
+   }
+
+</style>
+</head>
+<body style="background-image:url('bi.jpg') ;">
+    
+    <div class="navbar">
+        <a class="active" style="  color:rgb(5, 5, 49)" href="#home">Home</a> 
+        <a href="#contactus">ContactUs</a>
+        <button id="rb" type="button" onmouseup="showresume()" >Resume builder </button> 
+        <a href="#about">Preview/Update Resume</a>
+        <span style="color:lavender;float: right; padding: 14px 16px;"> <a href="http://localhost:8080/log/">LOGOUT</a></span>
+        <span style="color:lavender;float: right; padding: 14px 16px;">WelCome:${FirstName}</span>
+     </div>
+     <form action="ResumeServlet" method="post">
+     <div class="main" style="display:none;" >
+        <div class="left">
+            <button type="button"onmouseup="showforms(0)" style="padding-left:26px">Personal Details</button>  <br> 
+            <button type="button"onmouseup="showforms(1)">Educational Details</button> <br> 
+            <button type="button"onmouseup="showforms(2)">Project Development</button> <br> 
+            <button type="button"onmouseup="showforms(3)">Experince Details</button> <br> 
+            <button type="button"onmouseup="showforms(4)" style="padding-left:32px">Extra Details</button> 
+        </div>
+        <div class="right">
+            <div class="content" style="display: block;">
+                <h1 style="padding-left: 100px;">Personal Details</h1>
+                <div class="first">
+                    <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                        placeholder="First Name *" name="first_name">
+                        <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                        placeholder="Last Name *" name="last_name">
+                </div>
+                <div class="first">
+                   
+                     <input type="text " id="email" pattern="^([a-zA-z_+%]+@[a-z]+\.[a-z]{2,4})$"
+                        placeholder="Enter email * " name="email" >
+                        <input type="number" id="email"  pattern="^[0-9]{10-15}$"
+                        placeholder="Phone Number" name="phone_number">
+                </div>
+                <div class="first">
+                    <input type="text" id="wl" 
+                       placeholder="Your Website " name="website">
+                       <input type="text" id="wl" 
+                       placeholder="Linked In " name="linked_in">
+               </div>
+               <div class="b">
+                <button type="button" onmouseup="showforms(1)">Next</button>        
+            </div>
+            
+            
+            </div>
+       
+     <div class="content"  style="display:none">
+        <h1 style="padding-left: 100px; ">Educational Details</h1>
+        <div class="first" style="padding-bottom: 30px;">
+            <input type="text" id="name"  pattern="^[a-zA-Z]*$" 
+                placeholder="College/University *" name="College">
+                <div>
+                <input id="name" type="text" placeholder="Joining date" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" name="college_joining_date">
+                <input id="name" type="text" placeholder="Completion date" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" name="college_completion_date">
+            </div>
+            <div>
+                <li style="list-style:none; outline: none;border-color: green;">
+                    <select name="college_qualification"  id="name" class="degree">
+                    <option value="" selected disabled hidden>DEGREE</option> 
+                    <option value="B.Tech">B.Tech</option> 
+                    <option value="B.Arts">B.Arts</option> 
+                    <option value="B.Sc">B.Sc</option> 
+                    </select></li>
+                <li style="list-style:none; outline: none;border-color: green;">
+                    <select name="college_description"  id="name" onfocus="showDept()" >
+                    <option value="" selected disabled hidden>DEPARTMENT</option> 
+                    <optgroup class="Dept" label="B.TECH" style="display:none;">
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="IT">IT</option>
+                        <option value="MECH">MECH</option>
+                        <option value="CIVIL">CIVIL</option>
+                      </optgroup> 
+                      <optgroup class="Dept" label="B.ARTS" style="display:none;">
+                        <option value="English">English</option>
+                        <option value="Psychology">Psychology</option>
+                        <option value="Archaeology">Archaeology</option>
+                        <option value="Music">Music</option>
+                        <option value="Social Work">Social Work</option>
+                      </optgroup> 
+                      <optgroup class="Dept" label="B.Sc" style="display:none;">
+                        <option value="Statistics">Statistics</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Microbiology">Microbiology</option>
+                        <option value="Biotechnology">Biotechnology</option>
+                        <option value="Botany">Botany</option>
+                      </optgroup> 
+                    </select></li>
+                </div>
+        </div>
+        <hr>
+        <div class="first">
+            <input type="text" id="name"  pattern="^[a-zA-Z]*$" 
+                placeholder="School *" name="school">
+                <div>
+                <input id="name" type="text" placeholder="Joining date" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" name="school_joining_date">
+                <input id="name" type="text" placeholder="Completion date" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" name="school_completion_date">
+            </div>
+            <div>
+                    <li  style="list-style:none; outline: none; padding-right: 5px;border-color: green;" >
+                        <select  name="school_qualification"  id="name">
+                            <option value="" selected disabled hidden>BOARDS</option> 
+                            <option value="CBSE">CBSE</option> 
+                            <option value="ICSE">ICSE</option> 
+                            <option value="NIOS">NIOS</option> 
+                            <option value="STATE BOARD">STATE BOARD</option> </select></li>
+            
+                    <li style="list-style:none; outline: none;border-color: green;"><select name="school_description"  id="name">
+                            <option value="" selected disabled hidden>STREAM</option> 
+                            <option value="SCINCE">SCINCE</option> 
+                            <option value="ARTS">ARTS</option> 
+                            <option value="COMMERCE">COMMERCE</option> 
+                             </select></li>
+        </div>
+    </div>
+       
+       <div class="b">
+        <button type="button" onmouseup="showforms(0)">Previous</button> 
+        <button type="button" onmouseup="showforms(2)">Next</button>        
+    </div>
+    
+    
+    </div>
+    <div class="content"style="margin-right:200px; float: left; display:none">
+        <h1 style="padding-left: -10px;">Project Developed</h1>
+        <div class="first">
+            <input type="text" id="name" style="padding-right:100px"
+                placeholder="Title *" name="project_title">
+        </div>
+        <div class="first">
+         <input type="text " id="email" style="padding-right:100px"
+                placeholder="Link* " name="project_link" >
+        </div>
+        <div class="first">
+            <input type="text" id="wl" style="padding-right:100px"
+               placeholder="Description  * " name="project_description">
+       </div>
+       <div class="b" >
+       
+        <button style=" margin-left:-120px" type="button" onmouseup="showforms(1)">Previous</button> 
+        <button type="button" onmouseup="showforms(3)">Next</button> 
+            
+    </div>
+    
+    
+    </div>
+    <div class="content" style="display: none;">
+        <h1 style="padding-left: 100px;">Experince Details</h1>
+        <div class="first">
+            <h2>Experince1</h2>
+            <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                placeholder="Institution/Organization  *" name="organisation">
+                <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                placeholder="Position *" name="position">
+               
+        </div>
+            <div>
+                <div class="first" style="margin-top:30px">
+                   
+                    <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                placeholder="Duration *" name="duration">
+                       <input type="text" id="name" 
+                       placeholder="Description" name="experiance_description">
+               </div>
+
+            </div>
+            <div class="first">
+                <h2>Experince2</h2>
+                <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                    placeholder="Institution/Organization  *" name="organisation1">
+                    <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                    placeholder="Position *" name="position1">
+                   
+            </div>
+                <div>
+                    <div class="first" style="margin-top:30px">
+                       
+                        <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                    placeholder="Duration *" name="duration1">
+                           <input type="text" id="name" 
+                           placeholder="Description" name="experiance_description1">
+                   </div>
+    
+                </div>
+    
+                <div class="b">
+                    <button type="button" onmouseup="showforms(2)">Previous</button> 
+                    <button type="button" onmouseup="showforms(4)">Next</button>        
+                </div>
+
+    </div>
+    <div class="content" style="display: none;">
+        <h1 style="padding-left: 100px;">Extra Details</h1>
+        <div class="first">
+            <h2>Skills/Languages</h2>
+            <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                placeholder="Skill1  *" name="Skill1">
+                <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                placeholder="Skill2 *" name="Skill2">
+               
+        </div>
+            <div>
+                <div class="first" style="margin-top:30px">
+                   
+                    <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                placeholder="Skill3 *" name="Skill3">
+                       <input type="text" id="name" 
+                       placeholder="Skill4" name="Skill4">
+               </div>
+
+            </div>
+            <div>
+                <div class="first" style="margin-top:30px">
+                   
+                    <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                placeholder="Skill5 *" name="Skill5">
+                       <input type="text" id="name" 
+                       placeholder="Skill6" name="Skill6">
+               </div>
+
+            </div>
+            <div class="first">
+                <h2>Interest</h2>
+                <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                    placeholder="Interest1 *" name="Interest1">
+                    <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                    placeholder="Interest2 *" name="Interest2">
+                   
+            </div>
+                <div>
+                    <div class="first" style="margin-top:30px">
+                       
+                        <input type="text" id="name" pattern="^[a-zA-Z]*$" 
+                    placeholder="Interest3 *" name="Interest3">
+                           <input type="text" id="name" 
+                           placeholder="Interest4" name="Interest4">
+                   </div>
+    
+                </div>
+    
+                <div class="b">
+                    <button type="button" onmouseup="showforms(3)">Previous</button> 
+                    <button type="submit">SUBMIT</button>         
+                </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+</form> 
+    
+
+</body>
+</html>

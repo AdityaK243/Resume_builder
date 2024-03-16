@@ -1,0 +1,30 @@
+@charset "ISO-8859-1";
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    padding: 30px;
+    background-color:lightblue;
+     margin-top:200px; 
+     height:120px
+}
+#us{
+    color: blueviolet
+}
+#as{
+    color: blue;
+}
+#vs{
+    color: red;
+}
+
+button{
+
+  background-color: aqua;
+}
+#s{
+    background-color:rgb(189, 11, 11);
+    color: rgb(24, 26, 24);
+}

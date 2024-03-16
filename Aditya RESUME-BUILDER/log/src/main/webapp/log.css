@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     background-color:rgb(242,243,243);
+}
+.container{
+    padding: 100px;
+background-color:gainsboro;
+     margin-top:20px; 
+     height:190px
+}
+button {
+	background-color: #56f5a6;
+	color: rgb(24, 22, 22);
+	border-radius:50px;
+}
+td {
+	font-weight: 800;
+}
+
+#us{
+   /*  color: blueviolet */
+}
+#as{
+   /*  color: blue; */
+}
+#vs{
+    /* color: red; */
+}
+#s:hover {
+  opacity: 1;
+}
+
+
+#s{
+    background-color:rgb(11, 189, 50);
+    color: rgb(40, 23, 199);
+    
+}

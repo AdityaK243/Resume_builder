@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="log.css">
+<title>Login</title>
+</head>
+
+<body>
+	<div class="container">
+		<form action ="LoginServlet" method ="post">
+<table style="font-size: 20px;">
+	<tr>
+		<td></td><td><span style="color:red">${error}</span></td>
+	</tr>
+		<tr> 
+				<td style="font-size: 30px; text-align: right; padding-right:1px"   id="us">LOGIN </td>
+				<td id="us" style="font-size: 30px;"> HERE </td>
+				
+				
+				
+			 </tr>
+			 <tr></tr> <tr></tr> <tr></tr> <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+<tr > 
+	<td  id="as" >USERNAME</td>
+	<td ><input type="text"  placeholder="EnterUserName" name="User_name" ></td>	
+ </tr>
+	<tr> 
+	<td  id="vs">PASSWORD</td>
+	<td><input type="password"  placeholder="EnterPASSWORD" name="Password"  > 
+		</td>	
+ </tr>
+	 <tr>
+	 <td></td>
+	   <td ><a href=http://localhost:8080/log/forget1.jsp>ForgetPassword</a></td>
+	 </tr>
+	 <tr></tr>
+	 <tr></tr> <tr></tr> <tr></tr> <tr></tr> <tr></tr> <tr></tr> <tr></tr> <tr></tr>
+	 <tr>
+	 <td></td>
+	 <td style="text-align: right; padding-right:10px"  > <button id="s" type="submit" style="padding:10px" >Login</button> / <a href="http://localhost:8080/log/Registers.html">SignUp</a></td>
+	  </tr>
+
+</table>
+</form>
+</div>
+</body>
+
+
+</html>
